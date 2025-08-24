@@ -1,0 +1,29 @@
+ <div class="post-detail">
+      <!-- Header with back button -->
+      <header class="post-detail__header">
+        <button class="back-btn" (click)="goBack()">
+          ← Back to Timeline
+        </button>
+        
+        <button class="refresh-btn" (click)="refreshPost()" [disabled]="isLoading">
+          {{ isLoading ? 'Loading...' : 'Refresh' }}
+        </button>
+      </header>
+
+      <!-- Loading state -->
+      <div *ngIf="isLoading && !post" class="loading-container">
+        <div class="loading-spinner">Loading post...</div>
+      </div>
+
+      <!-- Error state -->
+      <div *ngIf="error && !post" class="error-container">
+        <h3>Post not found</h3>
+        <p>{{ error }}</p>
+        <button class="retry-btn" (click)="refreshPost()">Try Again</button>
+      </div>
+
+      <!-- Post content -->
+      <div *ngIf="post" class="post-detail__content">
+        <app-post-card [post]="post"></app-post-card>
+      </div>
+    </div>
