@@ -1,0 +1,53 @@
+ <div class="create-post">
+      <!-- Image Upload Section -->
+      <div class="image-section">
+        <div *ngIf="!previewUrl" class="upload-area">
+          <input type="file" id="imageInput" accept="image/*" 
+                 (change)="onFileSelected($event)" hidden>
+          
+          <button type="button" (click)="selectFile()" class="upload-btn">
+            📷 Choose Photo
+          </button>
+          
+          <button type="button" (click)="capturePhoto()" class="capture-btn">
+            📸 Take Photo
+          </button>
+        </div>
+
+        <div *ngIf="previewUrl" class="preview">
+          <img [src]="previewUrl" alt="Preview">
+          <button type="button" (click)="removeImage()" class="remove-btn">×</button>
+        </div>
+      </div>
+
+      <!-- Caption Section -->
+      <div class="caption-section">
+        <input type="text" [(ngModel)]="username" 
+               placeholder="Your username" 
+               class="username-input" required>
+        
+        <textarea [(ngModel)]="caption" 
+                  placeholder="Write a caption..." 
+                  rows="3" 
+                  maxlength="500" 
+                  class="caption-input" 
+                  required></textarea>
+        
+        <div class="char-count">{{ caption.length }}/500</div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="actions">
+        <button type="button" (click)="cancel()" 
+                [disabled]="isSubmitting()" 
+                class="cancel-btn">
+          Cancel
+        </button>
+        
+        <button type="button" (click)="submit()" 
+                [disabled]="!canSubmit() || isSubmitting()" 
+                class="submit-btn">
+          {{ isSubmitting() ? 'Posting...' : 'Post' }}
+        </button>
+      </div>
+    </div>

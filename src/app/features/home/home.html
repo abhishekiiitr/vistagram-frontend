@@ -1,0 +1,29 @@
+ <div class="home">
+      <header class="header">
+        <h1>Vistagram</h1>
+        <button class="new-post-btn" (click)="showCreateModal.set(true)">
+          + New Post
+        </button>
+      </header>
+
+      <div class="posts-grid">
+        <app-post-card 
+          *ngFor="let post of posts(); trackBy: trackByPostId" 
+          [post]="post">
+        </app-post-card>
+      </div>
+
+      <!-- Create Post Modal -->
+      <div *ngIf="showCreateModal()" class="modal" (click)="closeModal($event)">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+          <div class="modal-header">
+            <h3>Create New Post</h3>
+            <button class="close-btn" (click)="showCreateModal.set(false)">×</button>
+          </div>
+          <app-create-post 
+            (postCreated)="onPostCreated()" 
+            (cancelled)="showCreateModal.set(false)">
+          </app-create-post>
+        </div>
+      </div>
+    </div>

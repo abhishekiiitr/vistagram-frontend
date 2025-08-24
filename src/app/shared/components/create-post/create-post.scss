@@ -1,0 +1,118 @@
+ .create-post {
+      padding: 20px;
+    }
+
+    .image-section {
+      margin-bottom: 20px;
+    }
+
+    .upload-area {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      padding: 40px;
+      border: 2px dashed #ddd;
+      border-radius: 10px;
+      background: #f9f9f9;
+    }
+
+    .upload-btn, .capture-btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .upload-btn {
+      background: #1da1f2;
+      color: white;
+    }
+
+    .capture-btn {
+      background: #17a2b8;
+      color: white;
+    }
+
+    .preview {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .preview img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .remove-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .caption-section {
+      margin-bottom: 20px;
+    }
+
+    .username-input, .caption-input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .caption-input {
+      resize: vertical;
+      font-family: inherit;
+    }
+
+    .char-count {
+      text-align: right;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .cancel-btn, .submit-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .cancel-btn {
+      background: #f8f9fa;
+      color: #666;
+      border: 1px solid #ddd;
+    }
+
+    .submit-btn {
+      background: #28a745;
+      color: white;
+    }
+
+    .submit-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }

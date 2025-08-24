@@ -1,0 +1,59 @@
+.post-detail {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .post-detail__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e1e8ed;
+    }
+
+    .back-btn, .refresh-btn, .retry-btn {
+      padding: 8px 16px;
+      border: 1px solid #1da1f2;
+      background: white;
+      color: #1da1f2;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .back-btn:hover, .refresh-btn:hover:not(:disabled), .retry-btn:hover {
+      background: #1da1f2;
+      color: white;
+    }
+
+    .refresh-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .loading-container, .error-container {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .error-container h3 {
+      color: #e74c3c;
+      margin-bottom: 10px;
+    }
+
+    .error-container p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .retry-btn {
+      border-color: #e74c3c;
+      color: #e74c3c;
+    }
+
+    .retry-btn:hover {
+      background: #e74c3c;
+      color: white;
+    }

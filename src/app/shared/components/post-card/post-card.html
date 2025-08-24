@@ -1,0 +1,37 @@
+<div class="post-card">
+      <div class="post-header">
+        <div class="user-info">
+          <div class="avatar">{{ post.username.charAt(0).toUpperCase() }}</div>
+          <div class="user-details">
+            <h4>{{ post.username }}</h4>
+            <span class="timestamp">{{ getTimeAgo(post.createdAt) }}</span>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="post-image">
+        <a [routerLink]="['/', post.id]">
+          <img [src]="post.imageBase64" alt="Post image" />
+        </a>
+      </div>
+
+      <div class="post-content">
+        <div class="actions">
+          <button class="action-btn like-btn" 
+                  [class.liked]="post.likedByMe"
+                  (click)="$event.stopPropagation(); toggleLike()">
+            <span class="heart">{{ post.likedByMe ? '❤️' : '🤍' }}</span>
+            {{ post.likes }}
+          </button>
+          
+          <button class="action-btn share-btn" (click)="$event.stopPropagation(); sharePost()">
+            📤 {{ post.shares }}
+          </button>
+        </div>
+        
+        <p class="caption">
+          <strong>{{ post.username }}</strong> {{ post.caption }}
+        </p>
+      </div>
+    </div>
