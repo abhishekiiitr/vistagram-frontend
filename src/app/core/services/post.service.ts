@@ -5,7 +5,7 @@ import { firstValueFrom } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class PostService {
-  private baseUrl = 'http://localhost:8080/api';
+  private baseUrl = 'https://vistagram-backend-n63j.onrender.com/api';
   private currentUserId = 'user123'; // Simulate current user
   
   posts = signal<Post[]>([]);
