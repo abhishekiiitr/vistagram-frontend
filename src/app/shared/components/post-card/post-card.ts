@@ -22,7 +22,7 @@ export class PostCard {
 
   async sharePost() {
     await this.postService.sharePost(this.post.id);
-    const url = `${window.location.origin}/post/${this.post.id}`;
+    const url = `${window.location.origin}/${this.post.id}`;
     // Try to use the Web Share API if available
     if (navigator.share) {
       navigator.share({
